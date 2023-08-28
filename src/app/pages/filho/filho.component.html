@@ -1,0 +1,14 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Telefone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contato of contatos; let even = even" [class.table-secondary]="even">
+      <td>{{ contato.nome }}</td>
+      <td>{{ contato.telefone }}</td>
+    </tr>
+  </tbody>
+</table>
