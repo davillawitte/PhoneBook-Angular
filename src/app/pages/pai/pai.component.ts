@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { ContatoService } from 'src/app/services/contato.service';
 import { Contato, contatosIniciais } from 'src/app/models/contato';
 import { FilhoComponent } from '../filho/filho.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -36,4 +35,5 @@ export class PaiComponent implements AfterViewInit {
       this.contatoForm.reset(); // reseta formulario
     }
   }
+
 }

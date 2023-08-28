@@ -1,22 +1,40 @@
 <app-header></app-header>
 
-<div class="d-flex flex-column align-items-center vh-100">
-  <div class="text-center mt-4">
-    <h2>Formulário de Inserção de Contato</h2>
-    <form [formGroup]="contatoForm" (ngSubmit)="adicionarContato()">
-      <div class="mb-3">
-        <label for="nome" class="form-label">Nome:</label>
-        <input type="text" id="nome" formControlName="nome" class="form-control">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-8 col-md-12 p-4 bg-light">
+      <div class="text-center mt-4">
+        <h2>Formulário de Inserção de Contato</h2>
+        <div class="d-flex justify-content-center"> <!-- Adicione esta div para centralizar -->
+          <form [formGroup]="contatoForm" (ngSubmit)="adicionarContato()" class="col-md-4"> <!-- Use a classe col-md-2 para definir o tamanho -->
+            <div class="mb-3">
+              <label for="nome" class="form-label">Nome:</label>
+              <input type="text" id="nome" formControlName="nome" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="telefone" class="form-label">Telefone:</label>
+              <input type="text" id="telefone" formControlName="telefone" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Adicionar Contato</button>
+          </form>
+        </div>
       </div>
-      <div class="mb-3">
-        <label for="telefone" class="form-label">Telefone:</label>
-        <input type="text" id="telefone" formControlName="telefone" class="form-control">
+      <div class="overflow-auto mt-4">
+        <app-filho></app-filho>
       </div>
-      <button type="submit" class="btn btn-primary">Adicionar Contato</button>
-    </form>
-  </div>
-
-  <div class="overflow-auto mt-4">
-    <app-filho></app-filho>
+    </div>
+    <div class="col-lg-4 col-md-12 p-4 bg-secondary text-light">
+      <h2>Passing Information Between Parent and Child Components</h2>
+      <p>
+        In this project, we have a parent component, which is the form, and a child component, which serves as the agenda listing. When adding a new contact, how can information be passed between these two components? A simpler approach would be to use @Input; however, for didactic and learning purposes, this project has employed @ViewChild. With @ViewChild, it becomes possible to access a child component, call methods, or access instance variables available to it, directly from the parent component. It's important to note that in cases where you wish to access multiple children, you should then use @ViewChildren.
+        <br><br>
+        Additionally, the following features were utilized in this project:
+      </p>
+      <ul>
+        <li>ReactiveForms;</li>
+        <li>Creation of Services;</li>
+        <li>ngAfterViewInit;</li>
+      </ul>
+    </div>
   </div>
 </div>
